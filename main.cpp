@@ -2,7 +2,7 @@
 #include "UC.h"
 using namespace std;
 
-UC ALGA, AM1, FP, FSC, MD, AED, BD, F2, SO, LDTS, FSI, IPC, LBAW, PFL, RC;
+UC ALGA, AM1, FP, FSC, MD, AED, BD, F2, SO, LDTS, FSI, IPC, LBAW, PFL, RC, UP;
 
 void setUCs() {         //first semester UC's only
     ALGA.setCode("L.EIC001"); ALGA.setCredits(4.5);
@@ -20,6 +20,7 @@ void setUCs() {         //first semester UC's only
     LBAW.setCode("L.EIC023"); LBAW.setCredits(6);
     PFL.setCode("L.EIC024"); PFL.setCredits(6);
     RC.setCode("L.EIC0025"); RC.setCredits(6);
+    UP.setCode("UP001"); UP.setCredits(1.5);
 }
 
 int main() {
