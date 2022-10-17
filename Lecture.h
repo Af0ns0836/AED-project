@@ -22,10 +22,9 @@ class Lecture {
     private:
         string uc_code_;
         string week_day_;
-        float start_time_{};
-        float duration_{};
+        float start_time_;
+        float duration_;
         string type_;
 };
-
 
 #endif
