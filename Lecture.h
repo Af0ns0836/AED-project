@@ -7,7 +7,7 @@ using namespace std;
 class Lecture {
     public:
         Lecture();
-        Lecture(string  uc_code, string  week_day, float start_time, float duration, string type);
+        Lecture(string uc_code, string  week_day, float start_time, float duration, string type);
         string getUcCode();
         void setUcCode(string uc_code);
         string getWeekDay();

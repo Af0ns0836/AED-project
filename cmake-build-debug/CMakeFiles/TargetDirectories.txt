@@ -1,3 +1,3 @@
-C:/Users/dias4/Desktop/curso/2 ano/AED/AED-project/cmake-build-debug/CMakeFiles/AED_project.dir
-C:/Users/dias4/Desktop/curso/2 ano/AED/AED-project/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/dias4/Desktop/curso/2 ano/AED/AED-project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/diogo/Desktop/AED-project/cmake-build-debug/CMakeFiles/AED_project.dir
+C:/Users/diogo/Desktop/AED-project/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/diogo/Desktop/AED-project/cmake-build-debug/CMakeFiles/rebuild_cache.dir

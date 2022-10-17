@@ -9,7 +9,7 @@
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.22"
+						"string" : "3.21"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/dias4/Desktop/curso/2 ano/AED/AED-project/cmake-build-debug",
-		"source" : "C:/Users/dias4/Desktop/curso/2 ano/AED/AED-project"
+		"build" : "C:/Users/diogo/Desktop/AED-project/cmake-build-debug",
+		"source" : "C:/Users/diogo/Desktop/AED-project"
 	},
 	"version" : 
 	{
