@@ -24,7 +24,24 @@ void setUCs() {         //first semester UC's only
 }
 
 int main() {
+    int userchoice;
     setUCs();
     cout << "AED tem a sigla " << AED.getCode() << " e vale " << AED.getCredits() << " creditos." << endl;
+    cout << "==================================== \n";
+    cout << "\t\tMENU \t \n";
+    cout << "==================================== \n";
+    cout << "1.Ocupacao de turmas/ano/UC\n";
+    cout << "2.Horario de determinado estudante\n";
+    cout << "3.Estudantes em determinada turma/UC/ano\n";
+    cout << "4.Estudantes com mais de n UCs\n"; // implica uso de BST(Binary Search Trees)
+    cout << "5.Alteracao de horarios \n";
+    cout << "Introduza o respetivo numero: ";
+    cin >> userchoice;
+
+    //switch (condition) {
+        
+    //}
+    
+    
     return 0;
 }
