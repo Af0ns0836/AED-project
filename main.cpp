@@ -68,7 +68,9 @@ Class getClassLectures(Class turma) {
             v.push_back(l);
         }
     }
-    turma.setSchedule(Schedule(v));
+    Schedule s = Schedule(v);
+    s.sortSchedule();
+    turma.setSchedule(s);
     return turma;
 }
 
