@@ -85,6 +85,8 @@ int main() {
     setUCs();
     setClassSchedules();
 
+    _3LEIC15.getSchedule().addLecture(Lecture({"test", "test", 1, 1, "test"})); //porque é que isto não adiciona a aula ao horario da turma???
+
     //lista dos horarios de cada turma só pra checkar se ficou a funcionar
     for (Class c : turmas_leic) {
         cout << "A turma " << c.getClassCode() << " tem " << c.getSchedule().getLectures().size() << " aulas por semana:" << '\n';
