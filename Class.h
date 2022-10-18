@@ -9,9 +9,9 @@ class Class {
     public:
         Class();
         explicit Class(string class_code);
-        explicit Class(string class_code, Schedule horario);
-        Class(Class const &c1);
+        Class(Class const &c1); //copy constructor
         string getClassCode() const;
+        void setClassCode(const string& class_code);
         Schedule getSchedule();
         void setSchedule(const Schedule& horario);
 
