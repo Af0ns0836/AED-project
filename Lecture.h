@@ -7,7 +7,7 @@ using namespace std;
 class Lecture {
     public:
         Lecture();
-        Lecture(string  uc_code, string  week_day, float start_time, float duration, string type);
+        Lecture(string uc_code, string  week_day, float start_time, float duration, string type);
         string getUcCode();
         void setUcCode(string uc_code);
         string getWeekDay();
@@ -22,10 +22,9 @@ class Lecture {
     private:
         string uc_code_;
         string week_day_;
-        float start_time_{};
-        float duration_{};
+        float start_time_;
+        float duration_;
         string type_;
 };
-
 
 #endif

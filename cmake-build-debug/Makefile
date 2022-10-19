@@ -200,6 +200,30 @@ Schedule.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AED_project.dir\build.make CMakeFiles/AED_project.dir/Schedule.cpp.s
 .PHONY : Schedule.cpp.s
 
+ScheduleManager.obj: ScheduleManager.cpp.obj
+.PHONY : ScheduleManager.obj
+
+# target to build an object file
+ScheduleManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AED_project.dir\build.make CMakeFiles/AED_project.dir/ScheduleManager.cpp.obj
+.PHONY : ScheduleManager.cpp.obj
+
+ScheduleManager.i: ScheduleManager.cpp.i
+.PHONY : ScheduleManager.i
+
+# target to preprocess a source file
+ScheduleManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AED_project.dir\build.make CMakeFiles/AED_project.dir/ScheduleManager.cpp.i
+.PHONY : ScheduleManager.cpp.i
+
+ScheduleManager.s: ScheduleManager.cpp.s
+.PHONY : ScheduleManager.s
+
+# target to generate assembly for a file
+ScheduleManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AED_project.dir\build.make CMakeFiles/AED_project.dir/ScheduleManager.cpp.s
+.PHONY : ScheduleManager.cpp.s
+
 Student.obj: Student.cpp.obj
 .PHONY : Student.obj
 
@@ -290,6 +314,9 @@ help:
 	@echo ... Schedule.obj
 	@echo ... Schedule.i
 	@echo ... Schedule.s
+	@echo ... ScheduleManager.obj
+	@echo ... ScheduleManager.i
+	@echo ... ScheduleManager.s
 	@echo ... Student.obj
 	@echo ... Student.i
 	@echo ... Student.s
