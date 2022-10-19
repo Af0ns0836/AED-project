@@ -5,6 +5,7 @@
 #include "Class.h"
 #include "UC.h"
 #include "Schedule.h"
+
 using namespace std;
 
 UC ALGA, AM1, FP, FSC, MD, AED, BD, F2, SO, LDTS, FSI, IPC, LBAW, PFL, RC, UP;
@@ -52,8 +53,8 @@ void setUCs() {         //first semester UC's only
 Class getClassLectures(Class turma) {
     vector<Lecture> v;
     string class_code = turma.getClassCode();
-    ifstream file;
-    file.open(R"(C:\Users\diogo\Desktop\AED-project\data-given\classes.csv)", ios::in); //o path pra mim so funciona se eu colocar assim, vejam se nos vossos pc's funciona se puserem data-given/classes.csv
+    ifstream file("../data-given/classes.csv");
+    //file.open(R"(C:\Users\diogo\Desktop\AED-project\data-given\classes.csv)", ios::in); //o path pra mim so funciona se eu colocar assim, vejam se nos vossos pc's funciona se puserem data-given/classes.csv
     vector<string> row;
     string line, word;
     while (file.peek() != EOF) {
