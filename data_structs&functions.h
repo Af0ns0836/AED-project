@@ -19,7 +19,6 @@ extern Schedule h1LEIC01, h1LEIC02, h1LEIC03, h1LEIC04, h1LEIC05, h1LEIC06, h1LE
         h3LEIC03, h3LEIC04, h3LEIC05, h3LEIC06, h3LEIC07, h3LEIC08, h3LEIC09, h3LEIC10, h3LEIC11, h3LEIC12, h3LEIC13,
         h3LEIC14, h3LEIC15;
 
-extern Schedule* ptr1;
 
 extern vector<Class> turmas_leic;
 
