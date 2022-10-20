@@ -6,6 +6,8 @@ Class::Class() = default;
 
 Class::Class(string class_code): class_code_(std::move(class_code)) {}
 
+Class::Class(string class_code, Schedule horario): class_code_(class_code), horario_(horario) {}
+
 Class::Class(const Class &c1) { //copy constructor
     this->class_code_ = c1.class_code_;
     this->horario_ = c1.horario_;
@@ -17,10 +19,4 @@ void Class::setClassCode(const string &class_code) {this->class_code_ = class_co
 
 Schedule Class::getSchedule() {return horario_;}
 
-void Class::setSchedule(const Schedule& horario) {this->horario_ = horario;}
-
-
-
-
-
-
+void Class::updateSchedule(const Schedule& horario) {this->horario_ = horario;}

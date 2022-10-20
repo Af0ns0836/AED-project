@@ -1,5 +1,6 @@
-"C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S "C:\Users\dias4\Desktop\curso\2 ano\AED\AED-project" -B "C:\Users\dias4\Desktop\curso\2 ano\AED\AED-project\cmake-build-debug"
-Doxygen build started
+C:\Users\diogo\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.3739.54\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/diogo/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3739.54/bin/ninja/win/ninja.exe -G Ninja -S C:\Users\diogo\Desktop\AED-project -B C:\Users\diogo\Desktop\AED-project\cmake-build-debug
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+Doxygen needs to be installed to generate the documentation.
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/dias4/Desktop/curso/2 ano/AED/AED-project/cmake-build-debug
+-- Build files have been written to: C:/Users/diogo/Desktop/AED-project/cmake-build-debug

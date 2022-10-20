@@ -6,7 +6,7 @@ Schedule::Schedule() = default;
 
 Schedule::Schedule(vector<Lecture> aulas): aulas_(std::move(aulas)) {}
 
-void Schedule::setLectures(vector<Lecture> aulas) {this->aulas_ = std::move(aulas);}
+void Schedule::updateLectures(vector<Lecture> aulas) {this->aulas_ = std::move(aulas);}
 
 vector<Lecture> Schedule::getLectures() {return aulas_;}
 
@@ -20,4 +20,6 @@ void Schedule::sortSchedule() {
         return n1 < n2;});
 }
 
-void Schedule::addLecture(const Lecture& aula) {aulas_.push_back(aula);}
+void Schedule::addLecture(const Lecture& aula) {
+    aulas_.push_back(aula);
+}
