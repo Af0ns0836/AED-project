@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <fstream>
 #include <sstream>
-#include "data_structs&functions.h"
+#include "functions.h"
 
 using namespace std;
 
@@ -31,6 +31,13 @@ void setUCs() { //first semester UC's only
     RC.setCode("L.EIC025"); RC.setCredits(6);
 }
 
+int getClassIndex(const string& s) { //linear search O(n)
+    for (int i = 0; i < turmas_leic.size(); i++) {
+        if (turmas_leic[i]->getClassCode() == s) {return i;}
+    }
+    return -1;
+}
+
 void createClasses() {
     string class_code;
     for (int i = 1; i <= 3; i++) {
@@ -56,21 +63,27 @@ void createClasses() {
     turmas_leic.pop_back();
 }
 
-void getClassLectures(Class* c) {
-    string class_code = c->getClassCode();
+void getClassLectures() {
+    string class_code;
     ifstream file("../data-given/classes.csv");
+    file.ignore(100, '\n');
     vector<string> row;
     string line, word;
     while (file.peek() != EOF) {
         row.clear();
+        class_code.clear();
         getline(file, line);
         stringstream s(line);
-        if (line.rfind(class_code, 0) == 0) {
-            while (getline(s, word, ',')) {
+        while (getline(s, word, ',')) {
                 row.push_back(word);
+                class_code = row[0];
             }
-            c->getSchedule()->addLecture(Lecture(row[1], row[2], stof(row[3]), stof(row[4]), row[5]));
+            turmas_leic[getClassIndex(class_code)]->getSchedule()->addLecture(Lecture(row[1], row[2], stof(row[3]), stof(row[4]), row[5]));
         }
+}
+
+void sortClassSchedules() {
+    for (auto c : turmas_leic) {
+        c->getSchedule()->sortSchedule();
     }
-    c->getSchedule()->sortSchedule();
 }

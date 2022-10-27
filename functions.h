@@ -1,5 +1,5 @@
-#ifndef AED_PROJECT_DATA_STRUCTS_FUNCTIONS_H
-#define AED_PROJECT_DATA_STRUCTS_FUNCTIONS_H
+#ifndef AED_PROJECT_FUNCTIONS_H
+#define AED_PROJECT_FUNCTIONS_H
 
 #include "UC.h"
 #include "Class.h"
@@ -15,6 +15,8 @@ extern void setUCs();
 
 extern void createClasses();
 
-extern void getClassLectures(Class* c);
+extern void getClassLectures();
+
+extern void sortClassSchedules();
 
 #endif
