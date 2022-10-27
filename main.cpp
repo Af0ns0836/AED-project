@@ -36,6 +36,7 @@ int main() {
     cout << "\t\tV\n";
     cout << '\n';
 
+    cout << "A turma " << turmas_leic[46]->getClassCode() << " tem " << turmas_leic[46]->getSchedule()->getLectures().size() << " aulas por semana:" << '\n';
     for (Lecture l : turmas_leic[46]->getSchedule()->getLectures()) {
         cout << turmas_leic[46]->getClassCode() << ' ' << l.getUcCode() << ' ' << l.getWeekDay() << ' ' << l.getStartTime() << ' ' << l.getDuration() << ' ' << l.getType() << '\n';
     }
