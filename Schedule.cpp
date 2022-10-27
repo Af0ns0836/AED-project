@@ -2,13 +2,11 @@
 #include <utility>
 #include "Schedule.h"
 
-Schedule::Schedule() = default;
+Schedule::Schedule(): aulas_({}) {}
 
 Schedule::Schedule(vector<Lecture> aulas): aulas_(std::move(aulas)) {}
 
-void Schedule::updateLectures(vector<Lecture> aulas) {this->aulas_ = std::move(aulas);}
-
-vector<Lecture> Schedule::getLectures() {return aulas_;}
+vector<Lecture> Schedule::getLectures() const {return aulas_;}
 
 static const string weekday_names[] = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
