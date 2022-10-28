@@ -15,7 +15,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -30,7 +31,8 @@
 					"name" : "AED_project",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -42,6 +44,13 @@
 					"jsonFile" : "target-AED_project-Debug-1910f4ecb3187d78ca70.json",
 					"name" : "AED_project",
 					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Doxygen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Doxygen-Debug-40bb4aa6c08344bdf5c5.json",
+					"name" : "Doxygen",
+					"projectIndex" : 0
 				}
 			]
 		}
@@ -49,12 +58,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/diogo/Desktop/AED-project/cmake-build-debug",
-		"source" : "C:/Users/diogo/Desktop/AED-project"
+		"build" : "C:/Users/dias4/Desktop/curso/2 ano/AED/AED-project/cmake-build-debug",
+		"source" : "C:/Users/dias4/Desktop/curso/2 ano/AED/AED-project"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 3
+		"minor" : 4
 	}
 }
