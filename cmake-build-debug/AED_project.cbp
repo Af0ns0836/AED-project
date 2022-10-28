@@ -128,10 +128,10 @@
 		<Unit filename="C:/Users/dias4/Desktop/curso/2 ano/AED/AED-project/UC.h">
 			<Option target="AED_project"/>
 		</Unit>
-		<Unit filename="C:/Users/dias4/Desktop/curso/2 ano/AED/AED-project/data_structs&amp;functions.h">
+		<Unit filename="C:/Users/dias4/Desktop/curso/2 ano/AED/AED-project/functions.cpp">
 			<Option target="AED_project"/>
 		</Unit>
-		<Unit filename="C:/Users/dias4/Desktop/curso/2 ano/AED/AED-project/functions.cpp">
+		<Unit filename="C:/Users/dias4/Desktop/curso/2 ano/AED/AED-project/functions.h">
 			<Option target="AED_project"/>
 		</Unit>
 		<Unit filename="C:/Users/dias4/Desktop/curso/2 ano/AED/AED-project/main.cpp">

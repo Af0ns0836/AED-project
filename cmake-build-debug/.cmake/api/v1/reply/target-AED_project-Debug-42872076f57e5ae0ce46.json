@@ -205,7 +205,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "data_structs&functions.h",
+			"path" : "functions.h",
 			"sourceGroupIndex" : 1
 		}
 	],
