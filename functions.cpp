@@ -1,8 +1,9 @@
 #include <iostream>
 #include <string>
-#include <algorithm>
 #include <fstream>
 #include <sstream>
+#include <list>
+#include <set>
 #include "functions.h"
 
 using namespace std;
@@ -12,6 +13,10 @@ UC ALGA, AM1, FP, FSC, MD, AED, BD, F2, SO, LDTS, FSI, IPC, LBAW, PFL, RC;
 vector<Class*> turmas_leic = {};
 
 vector<Schedule*> horarios_leic = {};
+
+set<pair<int, string>> student_pairs = {};
+
+BST b, *root = nullptr;
 
 void setUCs() { //first semester UC's only
     ALGA.setCode("L.EIC001"); ALGA.setCredits(4.5);
@@ -31,7 +36,7 @@ void setUCs() { //first semester UC's only
     RC.setCode("L.EIC025"); RC.setCredits(6);
 }
 
-int getClassIndex(const string& s) { //linear search O(n)
+int getClassIndex(const string& s) { //linear search O(n) because it's <50 classes
     for (int i = 0; i < turmas_leic.size(); i++) {
         if (turmas_leic[i]->getClassCode() == s) {return i;}
     }
@@ -66,6 +71,9 @@ void createClasses() {
 void getClassLectures() {
     string class_code;
     ifstream file("../data-given/classes.csv");
+    if(!file) {
+        cout<<" Error opening file. " << endl;
+    }
     file.ignore(100, '\n');
     vector<string> row;
     string line, word;
@@ -75,15 +83,50 @@ void getClassLectures() {
         getline(file, line);
         stringstream s(line);
         while (getline(s, word, ',')) {
-                row.push_back(word);
-                class_code = row[0];
-            }
-            turmas_leic[getClassIndex(class_code)]->getSchedule()->addLecture(Lecture(row[1], row[2], stof(row[3]), stof(row[4]), row[5]));
+            row.push_back(word);
+            class_code = row[0];
         }
+        turmas_leic[getClassIndex(class_code)]->getSchedule()->addLecture(Lecture(row[1], row[2], stof(row[3]), stof(row[4]), row[5]));
+    }
+    file.close();
+}
+
+void getStudents() {
+    ifstream file("../data-given/students_classes.csv");
+    if(!file) {
+        cout<<" Error opening file. " << endl;
+    }
+    file.ignore(100, '\n');
+    pair<int, string> p;
+    vector<string> row;
+    string line, word;
+    while (file.peek() != EOF) {
+        row.clear();
+        getline(file, line);
+        stringstream s(line);
+        while (getline(s, word, ',')) {
+            row.push_back(word);
+        }
+        p.first = stoi(row[0]);
+        p.second = row[1];
+        student_pairs.insert(p);
+    }
+    file.close();
 }
 
 void sortClassSchedules() {
     for (auto c : turmas_leic) {
         c->getSchedule()->sortSchedule();
     }
+}
+
+void createStudentBST() {
+    root = b.insert(root, new Student());
+    for (auto p : student_pairs) {
+        b.insert(root, new Student(p.first, p.second));
+    }
+}
+
+void printStudentBST() {
+    b.print(root);
 }

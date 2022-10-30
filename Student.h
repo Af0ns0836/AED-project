@@ -15,10 +15,9 @@ class Student {
         Schedule* getStudentSchedule();
 
     private:
-        int upCode_{};
+        int upCode_;
         string name_;
-        Schedule* horarioEstudante_{};
+        Schedule* horarioEstudante_;
 };
-
 
 #endif

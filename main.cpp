@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "functions.h"
+#include "BST.h"
 
 using namespace std;
 
@@ -12,11 +13,14 @@ int main() {
     createClasses();
     getClassLectures();
     sortClassSchedules();
+    getStudents();
+    createStudentBST();
 
+    //print students
+    printStudentBST();
 
+    cout <<'\n';
     while(!done){
-
-    //TESTS
 
     cout << "==================================== \n";
     cout << "\t\tMENU \t \n";
@@ -40,13 +44,12 @@ int main() {
             cout << '\n';
         }
         break;
-        /*case'2': ;
+        case'2': ;
         case'3': ;
         case'4': ;
-        case'5': ;*/
+        case'5': ;
         }
-
-
     }
+
     return 0;
 }

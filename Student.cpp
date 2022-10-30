@@ -2,7 +2,7 @@
 
 #include <utility>
 
-Student::Student() = default;
+Student::Student(): upCode_(-1), name_("ROOT_STUDENT") {}
 
 Student::Student(int upCode, string name): upCode_(upCode), name_(std::move(name)) {}
 

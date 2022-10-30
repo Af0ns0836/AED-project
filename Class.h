@@ -18,5 +18,4 @@ class Class {
         Schedule* horario_;
 };
 
-
 #endif
