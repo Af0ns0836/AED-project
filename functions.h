@@ -18,6 +18,8 @@ extern vector<Schedule*> horarios_leic;
 
 extern set<pair<int, string>> student_pairs;
 
+extern vector<Schedule*> student_schedules;
+
 extern BST b, *root;
 
 extern void setUCs();
@@ -37,5 +39,11 @@ extern void printStudentBST();
 extern void searchPrintStudentLocation(int upCode);
 
 extern BST* getStudentLocation(int upCode);
+
+extern void createEmptyStudentSchedules();
+
+extern void getStudentLectures(BST* node);
+
+extern void getAllStudentLectures(BST* root);
 
 #endif

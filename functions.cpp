@@ -16,6 +16,8 @@ vector<Schedule*> horarios_leic = {};
 
 set<pair<int, string>> student_pairs = {};
 
+vector<Schedule*> student_schedules = {};
+
 BST b, *root = nullptr;
 
 void setUCs() { //first semester UC's only
@@ -94,7 +96,7 @@ void getClassLectures() {
 void getStudents() {
     ifstream file("../data-given/students_classes.csv");
     if(!file) {
-        cout<<" Error opening file. " << endl;
+        cout << "Error opening file. " << endl;
     }
     file.ignore(100, '\n');
     pair<int, string> p;
@@ -122,8 +124,10 @@ void sortClassSchedules() {
 
 void createStudentBST() {
     root = b.insert(root, new Student());
-    for (auto p : student_pairs) {
-        b.insert(root, new Student(p.first, p.second));
+    int i = 0;
+    for (const auto& p : student_pairs) {
+        b.insert(root, new Student(p.first, p.second, student_schedules[i]));
+        i++;
     }
 }
 
@@ -138,4 +142,48 @@ void searchPrintStudentLocation(int upCode) {
 BST* getStudentLocation(int upCode) {
     BST* found = b.search(root, upCode);
     return found;
+}
+
+void createEmptyStudentSchedules() {
+    for (auto p : student_pairs) {
+        student_schedules.emplace_back(new Schedule());
+    }
+}
+
+void getStudentLectures(BST* node) {
+    ifstream file("../data-given/students_classes.csv");
+    if(!file) {
+        cout << "Error opening file. " << endl;
+    }
+    file.ignore(100, '\n');
+    vector<string> row;
+    string line, word;
+    while (file.peek() != EOF) {
+        row.clear();
+        getline(file, line);
+        stringstream s(line);
+        while (getline(s, word, ',')) {
+            row.push_back(word);
+        }
+        if (row[0] == to_string(node->getStudent()->getStudentCode())) {
+            for (auto c : turmas_leic) {
+                if (row[3] == c->getClassCode()) {
+                    for (auto l : c->getSchedule()->getLectures()) {
+                        if (row[2] == l.getUcCode()) {
+                            node->getStudent()->getStudentSchedule()->addLecture(l);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    node->getStudent()->getStudentSchedule()->sortSchedule();
+    file.close();
+}
+
+void getAllStudentLectures(BST* root) {
+    if (!root) {return;}
+    getAllStudentLectures(root->getLeftBranch());
+    getStudentLectures(root);
+    getAllStudentLectures(root->getRightBranch());
 }

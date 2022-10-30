@@ -94,6 +94,6 @@ BST* BST::search(BST* root, int upCode) {
 void BST::print(BST* root) {
     if (!root) {return;}
     print(root->left_);
-    cout << '(' << root->student_->getStudentCode() << " / " << root->student_->getStudentName() << ')' << endl;
+    cout << '(' << root->student_->getStudentCode() << " / " << root->student_->getStudentName() << " / " << root->getStudent()->getStudentSchedule()->getLectures().size() << " aulas por semana)" << endl;
     print(root->right_);
 }

@@ -8,6 +8,7 @@ class Lecture {
     public:
         Lecture();
         Lecture(string uc_code, string  week_day, float start_time, float duration, string type);
+        Lecture(Lecture const &l); //copy
         string getUcCode();
         void setUcCode(string uc_code);
         string getWeekDay();

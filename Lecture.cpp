@@ -7,6 +7,8 @@ Lecture::Lecture(string  uc_code, string  week_day, float start_time, float dura
 uc_code_(std::move(uc_code)), week_day_(std::move(week_day)), start_time_(start_time),
 duration_(duration), type_(std::move(type)) {}
 
+Lecture::Lecture(const Lecture &l): uc_code_(l.uc_code_), week_day_(l.week_day_), start_time_(l.start_time_), duration_(l.duration_), type_(l.type_) {}
+
 string Lecture::getUcCode() {return uc_code_;}
 
 void Lecture::setUcCode(string uc_code) {this->uc_code_ = std::move(uc_code);}

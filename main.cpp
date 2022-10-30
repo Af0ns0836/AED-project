@@ -14,20 +14,12 @@ int main() {
     getClassLectures();
     sortClassSchedules();
     getStudents();
+    createEmptyStudentSchedules();
     createStudentBST();
-
-    //print students
-    printStudentBST();
-    cout << '\n';
-
-    searchPrintStudentLocation(202054812);
-    Student* s1 = getStudentLocation(202054812)->getStudent();
-    cout << s1->getStudentCode() << " - " << s1->getStudentName() << '\n';
-
+    getAllStudentLectures(root);
 
     cout <<'\n';
     while(!done){
-
     cout << "==================================== \n";
     cout << "\t\tMENU \t \n";
     cout << "==================================== \n";
@@ -50,8 +42,18 @@ int main() {
             cout << '\n';
         }
         break;
-        /*case'2': ;
-        case'3': ;
+        case'2':
+            cout << '\n' << "Introduza o codigo do aluno: ";
+            int student_code;
+            cin >> student_code;
+            Student* temp = getStudentLocation(student_code)->getStudent();
+            cout << '\n' << "Horario do aluno (" << temp->getStudentCode() << " / " << temp->getStudentName() << "):\n";
+            for (auto l : temp->getStudentSchedule()->getLectures()) {
+                cout << l.getUcCode() << ' ' << l.getWeekDay() << ' ' << l.getStartTime() << ' ' << l.getDuration() << ' ' << l.getType() << '\n';
+            }
+            cout << "\n";
+            break;
+        /*case'3': ;
         case'4': ;
         case'5': ;*/
         }
