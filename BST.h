@@ -9,7 +9,12 @@ class BST {
     public:
         BST();
         explicit BST(Student* student);
+        Student* getStudent();
+        BST* getRightBranch();
+        BST* getLeftBranch();
         BST* insert(BST*, Student* student);
+        void searchPrint(BST*, int upCode);
+        BST* search(BST*, int upCode);
         void print(BST*);
 
     private:

@@ -130,3 +130,12 @@ void createStudentBST() {
 void printStudentBST() {
     b.print(root);
 }
+
+void searchPrintStudentLocation(int upCode) {
+    b.searchPrint(root, upCode);
+}
+
+BST* getStudentLocation(int upCode) {
+    BST* found = b.search(root, upCode);
+    return found;
+}

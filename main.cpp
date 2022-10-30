@@ -18,6 +18,12 @@ int main() {
 
     //print students
     printStudentBST();
+    cout << '\n';
+
+    searchPrintStudentLocation(202054812);
+    Student* s1 = getStudentLocation(202054812)->getStudent();
+    cout << s1->getStudentCode() << " - " << s1->getStudentName() << '\n';
+
 
     cout <<'\n';
     while(!done){
@@ -44,10 +50,10 @@ int main() {
             cout << '\n';
         }
         break;
-        case'2': ;
+        /*case'2': ;
         case'3': ;
         case'4': ;
-        case'5': ;
+        case'5': ;*/
         }
     }
 
