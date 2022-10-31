@@ -141,6 +141,30 @@ Doxygen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Doxygen.dir\build.make CMakeFiles/Doxygen.dir/build
 .PHONY : Doxygen/fast
 
+BST.obj: BST.cpp.obj
+.PHONY : BST.obj
+
+# target to build an object file
+BST.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AED_project.dir\build.make CMakeFiles/AED_project.dir/BST.cpp.obj
+.PHONY : BST.cpp.obj
+
+BST.i: BST.cpp.i
+.PHONY : BST.i
+
+# target to preprocess a source file
+BST.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AED_project.dir\build.make CMakeFiles/AED_project.dir/BST.cpp.i
+.PHONY : BST.cpp.i
+
+BST.s: BST.cpp.s
+.PHONY : BST.s
+
+# target to generate assembly for a file
+BST.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AED_project.dir\build.make CMakeFiles/AED_project.dir/BST.cpp.s
+.PHONY : BST.cpp.s
+
 Class.obj: Class.cpp.obj
 .PHONY : Class.obj
 
@@ -343,6 +367,9 @@ help:
 	@echo ... rebuild_cache
 	@echo ... Doxygen
 	@echo ... AED_project
+	@echo ... BST.obj
+	@echo ... BST.i
+	@echo ... BST.s
 	@echo ... Class.obj
 	@echo ... Class.i
 	@echo ... Class.s

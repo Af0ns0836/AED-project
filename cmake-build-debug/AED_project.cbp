@@ -92,6 +92,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/dias4/Desktop/curso/2 ano/AED/AED-project/BST.cpp">
+			<Option target="AED_project"/>
+		</Unit>
+		<Unit filename="C:/Users/dias4/Desktop/curso/2 ano/AED/AED-project/BST.h">
+			<Option target="AED_project"/>
+		</Unit>
 		<Unit filename="C:/Users/dias4/Desktop/curso/2 ano/AED/AED-project/Class.cpp">
 			<Option target="AED_project"/>
 		</Unit>

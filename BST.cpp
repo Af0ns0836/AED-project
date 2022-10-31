@@ -1,5 +1,6 @@
 #include "Student.h"
 #include "BST.h"
+#include<bits/stdc++.h>
 #include <iostream>
 using namespace std;
 
@@ -87,6 +88,7 @@ BST* BST::search(BST* root, int upCode) {
         else
             temp = temp->getRightBranch();
     }
+    return nullptr;
 }
 
 // Inorder traversal function.
@@ -96,4 +98,42 @@ void BST::print(BST* root) {
     print(root->left_);
     cout << '(' << root->student_->getStudentCode() << " / " << root->student_->getStudentName() << " / " << root->getStudent()->getStudentSchedule()->getLectures().size() << " aulas por semana)" << endl;
     print(root->right_);
+}
+
+
+/* Iterative function for inorder tree
+   traversal */
+int BST::treeTraversal(BST* root,string choice2)
+{
+    stack<BST* > s;
+    BST *curr = root;
+    int n = 0;
+
+    while (curr != nullptr || s.empty() == false)
+    {
+        /* Reach the left most Node of the
+           curr Node */
+        while (curr !=  nullptr)
+        {
+            /* place pointer to a tree node on
+               the stack before traversing
+              the node's left subtree */
+            s.push(curr);
+            if(curr->getStudent()->getStudentSchedule()){
+
+            }
+                curr = curr->left_;
+
+        }
+        /* Current must be NULL at this point */
+        curr = s.top();
+        s.pop();
+        //cout << curr->student_ << " ";
+        /* we have visited the node and its
+           left subtree.  Now, it's right
+           subtree's turn */
+        curr = curr->right_;
+
+    } /* end of while */
+    return n;
 }

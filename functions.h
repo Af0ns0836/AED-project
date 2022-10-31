@@ -46,4 +46,6 @@ extern void getStudentLectures(BST* node);
 
 extern void getAllStudentLectures(BST* root);
 
+int numberOfStudents(string choice);
+
 #endif
