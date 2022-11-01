@@ -152,9 +152,7 @@ void createEmptyStudentSchedules() {
 
 void getStudentLectures(BST* node) {
     ifstream file("../data-given/students_classes.csv");
-    if(!file) {
-        cout << "Error opening file. " << endl;
-    }
+    if(!file) {cout << "Error opening file. " << endl;}
     file.ignore(100, '\n');
     vector<string> row;
     string line, word;
