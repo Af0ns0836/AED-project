@@ -22,7 +22,7 @@ int main() {
     fillUCSchedules();
 
 
-    cout << '\n';
+   /* cout << '\n';
     cout << "=======================================================" << "\n\n";
     for (auto uc : UCs) { //estudantes das turmas de todas as cadeiras
         cout << "CADEIRA: " << uc->getCode() << "\n\n";
@@ -34,7 +34,7 @@ int main() {
             cout << '\n';
         }
         cout << '\n';
-    }
+    }*/
 
 
     cout << '\n';
@@ -45,11 +45,20 @@ int main() {
             cout << c->getClassCode() << '\n';
             for (auto s : c->getSchedule()->getLectures()) {
                 cout << s.getUcCode() << ' ' << s.getWeekDay() << ' ' << s.getStartTime() << ' ' << s.getDuration() << ' ' << s.getType() << '\n';
+
             }
             cout << '\n';
         }
         cout << '\n';
     }
+
+    /*for (Class* c : turmas_leic) {
+        cout << "A turma " << c->getClassCode() << " tem " << c->getSchedule()->getLectures().size() << " aulas por semana:" << '\n';
+        for (Lecture l : c->getSchedule()->getLectures()) {
+            cout << c->getClassCode() << ' ' << l.getUcCode() << ' ' << l.getWeekDay() << ' ' << l.getStartTime() << ' ' << l.getDuration() << ' ' << l.getType() << '\n';
+        }
+        cout << '\n';
+    }*/
 
 
     cout <<'\n';
@@ -64,20 +73,45 @@ int main() {
         cout << "5.Alteracao de horarios \n";
         cout << "Introduza o respetivo numero ou 'q' para terminar: ";
         cin >> userchoice;
-
         switch (userchoice) {
             case 'q': done = true;
                     break;
             case 'Q': done = true;
                 break;
 
-            case '1':{ for (Class* c : turmas_leic) {
-                cout << "A turma " << c->getClassCode() << " tem " << c->getSchedule()->getLectures().size() << " aulas por semana:" << '\n';
-                for (Lecture l : c->getSchedule()->getLectures()) {
-                    cout << c->getClassCode() << ' ' << l.getUcCode() << ' ' << l.getWeekDay() << ' ' << l.getStartTime() << ' ' << l.getDuration() << ' ' << l.getType() << '\n';
+            case '1':{
+                string tua;
+                string tua2;
+                cout << '\n' << "Introduza onde deseja saber o numero de estudantes(turma/UC/ano):  ";
+                unsigned long n = 0;
+                cin >> tua;
+                if (tua == "turma"){
+                    cout << "Digite a turma:  ";
+                    cin >> tua2;
+                    // nome_turma = 1LEIC01;
+
+                    cout << "Existem " << n << " estudantes na " << tua2;
                 }
-                cout << '\n';
-            }}
+                else if (tua == "UC"){
+                    cout << "Digite a sigla da UC:  ";
+                    cin >> tua2;
+                   for(auto uc : UCs) {//cadeira L.EIC001 tem 31 estudantes
+                       string nome_uc = uc->getName();
+                       if(nome_uc == tua2) {
+                           for (auto c: uc->getUCClasses()) {
+                               n += c->getStudentList().size();
+                           }
+                       }
+                   }
+                    cout << "Existem " << n << " estudantes em " << tua2;
+                    cout << "\n";
+                }
+                else{
+                    cout << "Digite o ano:  ";
+
+                    cout << "Existem " << n << " estudantes no " << tua2;
+                }
+            }
             break;
 
             case'2': {
@@ -95,10 +129,10 @@ int main() {
             }
 
             case'3': {
-                cout << '\n' << "Introduza onde deseja saber o numero de estudantes(turma/UC/ano):  ";
+                cout << '\n' << "Introduza onde deseja saber os estudantes(turma/UC/ano):  ";
+                int n;
                 string choice;
                 string choice2;
-                int n;
                 cin >> choice;
                 if (choice == "turma"){
                     cout << "Digite a turma:  ";
