@@ -27,7 +27,7 @@ int main() {
     for (auto uc : UCs) { //estudantes das turmas de todas as cadeiras
         cout << "CADEIRA: " << uc->getCode() << "\n\n";
         for (auto c : uc->getUCClasses()) {
-            cout << c->getClassCode() << '\n';
+            cout << c->getClassCode() << " tem " << c->getStudentList().size() << " estudantes:" << '\n';
             for (auto s : c->getStudentList()) {
                 cout << s->getStudentCode() << ' ' << s->getStudentName() << '\n';
             }
