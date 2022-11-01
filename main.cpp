@@ -22,11 +22,6 @@ int main() {
     fillUCSchedules();
 
 
-    for (auto uc : UCs) {
-        cout << uc->getCode() << " / numero de turmas = " << uc->getUCClasses().size() << '\n';
-    }
-
-
     cout << '\n';
     cout << "=======================================================" << "\n\n";
     for (auto uc : UCs) { //estudantes das turmas de todas as cadeiras
@@ -45,7 +40,7 @@ int main() {
     cout << '\n';
     cout << "=======================================================" << "\n\n";
     for (auto uc : UCs) { //horarios das turmas de todas as cadeiras
-        cout << "CADEIRA: " << uc->getCode() << ' ' << uc.g "\n\n";
+        cout << "CADEIRA: " << uc->getCode() << ' ' << uc->getName() << "\n\n";
         for (auto c : uc->getUCClasses()) {
             cout << c->getClassCode() << '\n';
             for (auto s : c->getSchedule()->getLectures()) {
