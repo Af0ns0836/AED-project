@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S "C:\Users\dias4\Desktop\curso\2 ano\AED\AED-project" -B "C:\Users\dias4\Desktop\curso\2 ano\AED\AED-project\cmake-build-debug"
+"C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2021.3.3/bin/ninja/win/ninja.exe" -G Ninja C:\Users\diogo\Desktop\AED-project
 -- The C compiler identification is GNU 11.2.0
 -- The CXX compiler identification is GNU 11.2.0
 -- Detecting C compiler ABI info
@@ -11,8 +11,8 @@
 -- Check for working CXX compiler: C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/g++.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Found Doxygen: C:/Program Files/doxygen/bin/doxygen.exe (found version "1.9.5 (2f6875a5ca481a69a6f32650c77a667f87d25e88)") found components: doxygen missing components: dot
-Doxygen build started
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+Doxygen needs to be installed to generate the documentation.
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/dias4/Desktop/curso/2 ano/AED/AED-project/cmake-build-debug
+-- Build files have been written to: C:/Users/diogo/Desktop/AED-project/cmake-build-debug

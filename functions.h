@@ -10,7 +10,7 @@
 #include <utility>
 using namespace std;
 
-extern UC ALGA, AM1, FP, FSC, MD, AED, BD, F2, SO, LDTS, FSI, IPC, LBAW, PFL, RC;
+extern vector<UC*> UCs;
 
 extern vector<Class*> turmas_leic;
 
@@ -24,6 +24,8 @@ extern BST b, *root;
 
 extern void setUCs();
 
+extern void getUCEmptyRosters();
+
 extern void createClasses();
 
 extern void getClassLectures();
@@ -31,6 +33,10 @@ extern void getClassLectures();
 extern void getStudents();
 
 extern void sortClassSchedules();
+
+extern void fillUCRosters();
+
+extern void fillUCSchedules();
 
 extern void createStudentBST();
 
@@ -45,7 +51,5 @@ extern void createEmptyStudentSchedules();
 extern void getStudentLectures(BST* node);
 
 extern void getAllStudentLectures(BST* root);
-
-int numberOfStudents(string choice);
 
 #endif

@@ -10,6 +10,7 @@ int main() {
     bool done = false;
 
     setUCs();
+    getUCEmptyRosters();
     createClasses();
     getClassLectures();
     sortClassSchedules();
@@ -17,6 +18,44 @@ int main() {
     createEmptyStudentSchedules();
     createStudentBST();
     getAllStudentLectures(root);
+    fillUCRosters();
+    fillUCSchedules();
+
+
+    for (auto uc : UCs) {
+        cout << uc->getCode() << " / numero de turmas = " << uc->getUCClasses().size() << '\n';
+    }
+
+
+    cout << '\n';
+    cout << "=======================================================" << "\n\n";
+    for (auto uc : UCs) { //estudantes das turmas de todas as cadeiras
+        cout << "CADEIRA: " << uc->getCode() << "\n\n";
+        for (auto c : uc->getUCClasses()) {
+            cout << c->getClassCode() << '\n';
+            for (auto s : c->getStudentList()) {
+                cout << s->getStudentCode() << ' ' << s->getStudentName() << '\n';
+            }
+            cout << '\n';
+        }
+        cout << '\n';
+    }
+
+
+    cout << '\n';
+    cout << "=======================================================" << "\n\n";
+    for (auto uc : UCs) { //horarios das turmas de todas as cadeiras
+        cout << "CADEIRA: " << uc->getCode() << ' ' << uc.g "\n\n";
+        for (auto c : uc->getUCClasses()) {
+            cout << c->getClassCode() << '\n';
+            for (auto s : c->getSchedule()->getLectures()) {
+                cout << s.getUcCode() << ' ' << s.getWeekDay() << ' ' << s.getStartTime() << ' ' << s.getDuration() << ' ' << s.getType() << '\n';
+            }
+            cout << '\n';
+        }
+        cout << '\n';
+    }
+
 
     cout <<'\n';
     while(!done){
@@ -34,6 +73,9 @@ int main() {
         switch (userchoice) {
             case 'q': done = true;
                     break;
+            case 'Q': done = true;
+                break;
+
             case '1':{ for (Class* c : turmas_leic) {
                 cout << "A turma " << c->getClassCode() << " tem " << c->getSchedule()->getLectures().size() << " aulas por semana:" << '\n';
                 for (Lecture l : c->getSchedule()->getLectures()) {
@@ -42,6 +84,7 @@ int main() {
                 cout << '\n';
             }}
             break;
+
             case'2': {
                 cout << '\n' << "Introduza o codigo do aluno: ";
                 int student_code;
@@ -55,6 +98,7 @@ int main() {
                 cout << "\n";
                 break;
             }
+
             case'3': {
                 cout << '\n' << "Introduza onde deseja saber o numero de estudantes(turma/UC/ano):  ";
                 string choice;

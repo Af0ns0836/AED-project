@@ -8,7 +8,7 @@
 
 using namespace std;
 
-UC ALGA, AM1, FP, FSC, MD, AED, BD, F2, SO, LDTS, FSI, IPC, LBAW, PFL, RC;
+vector<UC*> UCs = {};
 
 vector<Class*> turmas_leic = {};
 
@@ -21,21 +21,46 @@ vector<Schedule*> student_schedules = {};
 BST b, *root = nullptr;
 
 void setUCs() { //first semester UC's only
-    ALGA.setCode("L.EIC001"); ALGA.setCredits(4.5);
-    AM1.setCode("L.EIC002"); AM1.setCredits(6);
-    FP.setCode("L.EIC003"); FP.setCredits(6);
-    FSC.setCode("L.EIC004"); FP.setCredits(6);
-    MD.setCode("L.EIC005"); MD.setCredits(6);
-    AED.setCode("L.EIC011"); AED.setCredits(6);
-    BD.setCode("L.EIC012"); BD.setCredits(6);
-    F2.setCode("L.EIC013"); F2.setCredits(4.5);
-    SO.setCode("L.EIC014"); SO.setCredits(6);
-    LDTS.setCode("L.EIC015"); LDTS.setCredits(6);
-    FSI.setCode("L.EIC021"); FSI.setCredits(6);
-    IPC.setCode("L.EIC022"); IPC.setCredits(4.5);
-    LBAW.setCode("L.EIC023"); LBAW.setCredits(6);
-    PFL.setCode("L.EIC024"); PFL.setCredits(6);
-    RC.setCode("L.EIC025"); RC.setCredits(6);
+    UCs.emplace_back(new UC("L.EIC001", "ALGA", 4.5));
+    UCs.emplace_back(new UC("L.EIC002", "AM1", 6));
+    UCs.emplace_back(new UC("L.EIC003", "FP", 6));
+    UCs.emplace_back(new UC("L.EIC004", "FSC", 6));
+    UCs.emplace_back(new UC("L.EIC005", "MD", 6));
+    UCs.emplace_back(new UC("L.EIC011", "AED", 6));
+    UCs.emplace_back(new UC("L.EIC012", "BD", 6));
+    UCs.emplace_back(new UC("L.EIC013", "F2", 4.5));
+    UCs.emplace_back(new UC("L.EIC014", "SO", 6));
+    UCs.emplace_back(new UC("L.EIC015", "LDTS", 6));
+    UCs.emplace_back(new UC("L.EIC021", "FSI", 6));
+    UCs.emplace_back(new UC("L.EIC022", "IPC", 4.5));
+    UCs.emplace_back(new UC("L.EIC023", "LBAW", 6));
+    UCs.emplace_back(new UC("L.EIC024", "PFL", 6));
+    UCs.emplace_back(new UC("L.EIC025", "RC", 6));
+}
+
+void getUCEmptyRosters() {
+    ifstream file("../data-given/classes_per_uc.csv");
+    if(!file) {
+        cout << "Error opening file. " << endl;
+    }
+    file.ignore(100, '\n');
+    vector<string> row;
+    string line, word;
+    while (file.peek() != EOF) {
+        row.clear();
+        getline(file, line);
+        stringstream s(line);
+        while (getline(s, word, ',')) {
+            row.push_back(word);
+        }
+        for (auto uc : UCs) {
+            if (row[0] == uc->getCode()) {
+                uc->addUCClass(new Class(row[1], new Schedule(), {}));
+            }
+        }
+
+    }
+    file.close();
 }
 
 int getClassIndex(const string& s) { //linear search O(n) because it's <50 classes
@@ -120,6 +145,58 @@ void sortClassSchedules() {
     for (auto c : turmas_leic) {
         c->getSchedule()->sortSchedule();
     }
+}
+
+void fillUCRosters() {
+    ifstream file("../data-given/students_classes.csv");
+    if(!file) {cout << "Error opening file. " << endl;}
+    file.ignore(100, '\n');
+    vector<string> row;
+    string line, word;
+    while (file.peek() != EOF) {
+        row.clear();
+        getline(file, line);
+        stringstream s(line);
+        while (getline(s, word, ',')) {
+            row.push_back(word);
+        }
+        for (auto uc : UCs) {
+            if (row[2] == uc->getCode()) {
+                for (auto c : uc->getUCClasses()) {
+                    if (row[3] == c->getClassCode()) {
+                        c->addStudent(new Student(stoi(row[0]), row[1]));
+                        }
+                    }
+                }
+            }
+        }
+    file.close();
+}
+
+void fillUCSchedules() {
+    ifstream file("../data-given/classes.csv");
+    if(!file) {cout << "Error opening file. " << endl;}
+    file.ignore(100, '\n');
+    vector<string> row;
+    string line, word;
+    while (file.peek() != EOF) {
+        row.clear();
+        getline(file, line);
+        stringstream s(line);
+        while (getline(s, word, ',')) {
+            row.push_back(word);
+        }
+        for (auto uc : UCs) {
+            if (row[1] == uc->getCode()) {
+                for (auto c : uc->getUCClasses()) {
+                    if (row[0] == c->getClassCode()) {
+                        c->getSchedule()->addLecture(Lecture(row[1], row[2], stof(row[3]), stof(row[4]), row[5]));
+                    }
+                }
+            }
+        }
+    }
+    file.close();
 }
 
 void createStudentBST() {
