@@ -103,8 +103,7 @@ void BST::print(BST* root) {
 
 /* Iterative function for inorder tree
    traversal */
-int BST::treeTraversal(BST* root,string choice2)
-{
+int BST::treeTraversal(BST* root, string choice2) {
     stack<BST* > s;
     BST *curr = root;
     int n = 0;

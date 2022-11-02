@@ -22,6 +22,10 @@ extern vector<Schedule*> student_schedules;
 
 extern BST b, *root;
 
+extern string lower(string s);
+
+extern string upper(string s);
+
 extern void setUCs();
 
 extern void getUCEmptyRosters();

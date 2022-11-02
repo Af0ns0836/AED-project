@@ -13,7 +13,9 @@ void UC::setCode(std::string uc_code) {this->uc_code_ = std::move(uc_code);}
 
 float UC::getCredits() const {return ects_;}
 
-void UC::setCredits(float ects) {this->ects_ = ects;}
+void UC::setCredits(float ects) {
+    this->ects_ = ects;
+}
 
 vector<Class*> UC::getUCClasses() {
     return turmas_da_uc_;

@@ -20,6 +20,20 @@ vector<Schedule*> student_schedules = {};
 
 BST b, *root = nullptr;
 
+string lower(string s) {
+    for (char& c : s) {
+        c = tolower(c);
+    }
+    return s;
+}
+
+string upper(string s) {
+    for (char& c : s) {
+        c = toupper(c);
+    }
+    return s;
+}
+
 void setUCs() { //first semester UC's only
     UCs.emplace_back(new UC("L.EIC001", "ALGA", 4.5));
     UCs.emplace_back(new UC("L.EIC002", "AM1", 6));
@@ -190,7 +204,8 @@ void fillUCSchedules() {
             if (row[1] == uc->getCode()) {
                 for (auto c : uc->getUCClasses()) {
                     if (row[0] == c->getClassCode()) {
-                        c->getSchedule()->addLecture(Lecture(row[1], row[2], stof(row[3]), stof(row[4]), row[5]));
+                        c->getSchedule()->addLecture(Lecture(row[1], row[2], stof(row[3]),
+                                                             stof(row[4]), row[5]));
                     }
                 }
             }

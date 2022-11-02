@@ -21,46 +21,6 @@ int main() {
     fillUCRosters();
     fillUCSchedules();
 
-
-   /* cout << '\n';
-    cout << "=======================================================" << "\n\n";
-    for (auto uc : UCs) { //estudantes das turmas de todas as cadeiras
-        cout << "CADEIRA: " << uc->getCode() << "\n\n";
-        for (auto c : uc->getUCClasses()) {
-            cout << c->getClassCode() << " tem " << c->getStudentList().size() << " estudantes:" << '\n';
-            for (auto s : c->getStudentList()) {
-                cout << s->getStudentCode() << ' ' << s->getStudentName() << '\n';
-            }
-            cout << '\n';
-        }
-        cout << '\n';
-    }*/
-
-
-    cout << '\n';
-    cout << "=======================================================" << "\n\n";
-    for (auto uc : UCs) { //horarios das turmas de todas as cadeiras
-        cout << "CADEIRA: " << uc->getCode() << ' ' << uc->getName() << "\n\n";
-        for (auto c : uc->getUCClasses()) {
-            cout << c->getClassCode() << '\n';
-            for (auto s : c->getSchedule()->getLectures()) {
-                cout << s.getUcCode() << ' ' << s.getWeekDay() << ' ' << s.getStartTime() << ' ' << s.getDuration() << ' ' << s.getType() << '\n';
-
-            }
-            cout << '\n';
-        }
-        cout << '\n';
-    }
-
-    /*for (Class* c : turmas_leic) {
-        cout << "A turma " << c->getClassCode() << " tem " << c->getSchedule()->getLectures().size() << " aulas por semana:" << '\n';
-        for (Lecture l : c->getSchedule()->getLectures()) {
-            cout << c->getClassCode() << ' ' << l.getUcCode() << ' ' << l.getWeekDay() << ' ' << l.getStartTime() << ' ' << l.getDuration() << ' ' << l.getType() << '\n';
-        }
-        cout << '\n';
-    }*/
-
-
     cout <<'\n';
     while(!done){
         cout << "==================================== \n";
@@ -82,34 +42,80 @@ int main() {
             case '1':{
                 string tua;
                 string tua2;
-                cout << '\n' << "Introduza onde deseja saber o numero de estudantes(turma/UC/ano):  ";
-                unsigned long n = 0;
+                string tua3;
+                cout << '\n' << "Introduza onde deseja saber o numero de estudantes(turma/UC/ano): ";
                 cin >> tua;
-                if (tua == "turma"){
-                    cout << "Digite a turma:  ";
+                cout << '\n';
+                if (lower(tua) == "turma"){
+                    unsigned n;
+                    cout << "Digite a UC a qual a turma pertence: ";
                     cin >> tua2;
+                    cout << '\n';
                     // nome_turma = 1LEIC01;
-
-                    cout << "Existem " << n << " estudantes na " << tua2;
+                    cout << "Digite o codigo da turma: ";
+                    cin >> tua3;
+                    cout << '\n';
+                    for(auto uc : UCs) {
+                        string nome_uc = uc->getName();
+                        if(nome_uc == tua2) {
+                            for (auto c: uc->getUCClasses()) {
+                                n = c->getStudentList().size();
+                            }
+                        }
+                    }
+                    cout << "Estão inscritos " << n << " estudantes na turma " << tua3 << '\n';
                 }
-                else if (tua == "UC"){
+                else if (lower(tua) == "uc") {
                     cout << "Digite a sigla da UC:  ";
                     cin >> tua2;
+                    unsigned n = 0;
                    for(auto uc : UCs) {//cadeira L.EIC001 tem 31 estudantes
                        string nome_uc = uc->getName();
-                       if(nome_uc == tua2) {
+                       if(nome_uc == upper(tua2)) {
                            for (auto c: uc->getUCClasses()) {
                                n += c->getStudentList().size();
                            }
                        }
                    }
-                    cout << "Existem " << n << " estudantes em " << tua2;
+                    cout << '\n';
+                    cout << "Estão inscritos " << n << " estudantes na UC: " << tua2;
                     cout << "\n";
                 }
-                else{
-                    cout << "Digite o ano:  ";
-
-                    cout << "Existem " << n << " estudantes no " << tua2;
+                else if (lower(tua) == "ano"){
+                    unsigned n = 0;
+                    cout << "Digite o ano: ";
+                    cin >> tua2;
+                    if (tua2 == "1") {
+                        vector<string> v = {"ALGA", "AM1", "FP", "FSC", "MD"};
+                        for (auto uc : UCs) {
+                            if (uc->getName() == v[0] || uc->getName() == v[1] || uc->getName() == v[2] || uc->getName() == v[3] || uc->getName() == v[4]) {
+                                for (auto c : uc->getUCClasses()) {
+                                    n += c->getStudentList().size();
+                                }
+                            }
+                        }
+                    }
+                    if (tua2 == "2") {
+                        vector<string> v = {"AED", "BD", "F2", "SO", "LDTS"};
+                        for (auto uc : UCs) {
+                            if (uc->getName() == v[0] || uc->getName() == v[1] || uc->getName() == v[2] || uc->getName() == v[3] || uc->getName() == v[4]) {
+                                for (auto c : uc->getUCClasses()) {
+                                    n += c->getStudentList().size();
+                                }
+                            }
+                        }
+                    }
+                    if (tua2 == "3") {
+                        vector<string> v = {"FSI", "IPC", "LBAW", "PFL", "RC"};
+                        for (auto uc : UCs) {
+                            if (uc->getName() == v[0] || uc->getName() == v[1] || uc->getName() == v[2] || uc->getName() == v[3] || uc->getName() == v[4]) {
+                                for (auto c : uc->getUCClasses()) {
+                                    n += c->getStudentList().size();
+                                }
+                            }
+                        }
+                    }
+                    cout << '\n' << "Estão inscritos " << n << " estudantes no " << tua2 << " ano."<< '\n';
                 }
             }
             break;
@@ -129,31 +135,98 @@ int main() {
             }
 
             case'3': {
-                cout << '\n' << "Introduza onde deseja saber os estudantes(turma/UC/ano):  ";
-                int n;
+                cout << '\n' << "Introduza onde deseja saber os estudantes(turma/UC/ano): ";
                 string choice;
                 string choice2;
+                string choice3;
                 cin >> choice;
-                if (choice == "turma"){
-                    cout << "Digite a turma:  ";
+                cout << '\n';
+                if (lower(choice) == "turma") {
+                    cout << "Digite a UC a qual a turma pertence: ";
                     cin >> choice2;
-                    BST::treeTraversal(root,choice2);
-                    cout << "Existem " << n << " estudantes na " << choice;}
-                else if (choice == "UC"){
+                    cout << '\n';
+                    // nome_turma = 1LEIC01;
+                    cout << "Digite o codigo da turma: ";
+                    cin >> choice3;
+                    cout << '\n';
+                    for (auto uc : UCs) {
+                        string nome_uc = uc->getName();
+                        if (nome_uc == choice2) {
+                            cout << "Alunos inscritos na turma " << choice3 << " de " << nome_uc << ":\n";
+                            for (auto c: uc->getUCClasses()) {
+                                if (c->getClassCode() == upper(choice3)) {
+                                for(auto s : c->getStudentList()) {
+                                    cout << s->getStudentCode() << ' ' << s->getStudentName() << '\n';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                cout << '\n';
+                } else if (lower(choice) == "uc") {
                     cout << "Digite a UC:  ";
-                    BST::treeTraversal(root,choice2);
-                    cout << "Existem " << n << " estudantes em " << choice;}
-                else{
-                    cout << "Digite o ano:  ";
-                    BST::treeTraversal(root,choice2);
-                    cout << "Existem " << n << " estudantes no " << choice;}
-                cout << "\n";
+                    cin >> choice2;
+                    for (auto uc : UCs) {
+                        string nome_uc = uc->getName();
+                        if (nome_uc == choice2) {
+                            cout << "Alunos inscritos na turma " << choice2 << " da UC (" << nome_uc << "):\n";
+                            for (auto c: uc->getUCClasses()) {
+                                for(auto s : c->getStudentList()) {
+                                    cout << s->getStudentCode() << ' ' << s->getStudentName() << '\n';
+                                }
+                            }
+                        }
+                    }
+                } else if (lower(choice) == "ano") {
+                    cout << "Digite o ano: ";
+                    cin >> choice2;
+                    cout << '\n';
+                    if (choice2 == "1") {
+                        vector<string> v = {"ALGA", "AM1", "FP", "FSC", "MD"};
+                        cout << "Alunos inscritos no ano " << choice2 << " da LEIC: \n";
+                        for (auto uc : UCs) {
+                            if (uc->getName() == v[0] || uc->getName() == v[1] || uc->getName() == v[2] || uc->getName() == v[3] || uc->getName() == v[4]) {
+                                for (auto c : uc->getUCClasses()) {
+                                    for (auto s : c->getStudentList()) {
+                                        cout << s->getStudentCode() << ' ' << s->getStudentName() << '\n';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (choice2 == "2") {
+                        vector<string> v = {"AED", "BD", "F2", "SO", "LDTS"};
+                        cout << "Alunos inscritos no ano " << choice2 << " da LEIC: \n";
+                        for (auto uc : UCs) {
+                            if (uc->getName() == v[0] || uc->getName() == v[1] || uc->getName() == v[2] || uc->getName() == v[3] || uc->getName() == v[4]) {
+                                for (auto c : uc->getUCClasses()) {
+                                    for (auto s : c->getStudentList()) {
+                                        cout << s->getStudentCode() << ' ' << s->getStudentName() << '\n';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (choice2 == "3") {
+                        vector<string> v = {"FSI", "IPC", "LBAW", "PFL", "RC"};
+                        cout << "Alunos inscritos no ano " << choice2 << " da LEIC: \n";
+                        for (auto uc : UCs) {
+                            if (uc->getName() == v[0] || uc->getName() == v[1] || uc->getName() == v[2] || uc->getName() == v[3] || uc->getName() == v[4]) {
+                                for (auto c : uc->getUCClasses()) {
+                                    for (auto s : c->getStudentList()) {
+                                        cout << s->getStudentCode() << ' ' << s->getStudentName() << '\n';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    cout << "\n";
+                }
                 break;
             }
             /*case'4': ;
             case'5': ;*/
         }
     }
-
     return 0;
 }
