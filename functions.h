@@ -56,4 +56,6 @@ extern void getStudentLectures(BST* node);
 
 extern void getAllStudentLectures(BST* root);
 
+extern void task4(BST* root, unsigned char n);
+
 #endif

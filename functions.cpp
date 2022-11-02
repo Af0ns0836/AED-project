@@ -277,3 +277,15 @@ void getAllStudentLectures(BST* root) {
     getStudentLectures(root);
     getAllStudentLectures(root->getRightBranch());
 }
+
+void task4(BST* root, unsigned char n=0) {
+    if (!root) {return;}
+    set<string> s;
+    task4(root->getLeftBranch(), n);
+    for (auto l : root->getStudent()->getStudentSchedule()->getLectures()) {
+        s.insert(l.getUcCode());
+    }
+    task4(root->getRightBranch(), n);
+    if (s.size() >= n) {cout << root->getStudent()->getStudentCode() << ' ' << root->getStudent()->getStudentName() << '\n';}
+    s.clear();
+}

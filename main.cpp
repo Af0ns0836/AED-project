@@ -224,8 +224,16 @@ int main() {
                 }
                 break;
             }
-            /*case'4': ;
-            case'5': ;*/
+            case'4':
+                cout << '\n' << "Introduza o numero minimo de UCs: ";
+                int n;
+                cin >> n;
+                cout << '\n';
+                cout << "Os seguintes alunos estao inscritos em mais de " << n << " UCs:" << '\n';
+                task4(root, n);
+                cout << '\n';
+                break;
+            case'5': break;
         }
     }
     return 0;
