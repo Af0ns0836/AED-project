@@ -13,6 +13,8 @@ class Student {
         int getStudentCode() const;
         string getStudentName() const;
         Schedule* getStudentSchedule();
+        bool operator == (const Student& s) const {return upCode_ == s.upCode_;}
+        bool operator != (const Student& s) const {return !operator==(s);}
 
     private:
         int upCode_;

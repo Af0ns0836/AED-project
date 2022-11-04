@@ -16,7 +16,6 @@ class BST {
         void searchPrint(BST*, int upCode);
         BST* search(BST*, int upCode);
         void print(BST*);
-        static int treeTraversal(BST* root, string choice);
 
     private:
         Student* student_;
