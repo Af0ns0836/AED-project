@@ -10,6 +10,7 @@ vector<Lecture> Schedule::getLectures() const {return aulas_;}
 
 static const string weekday_names[] = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
+//! Sort ao horario
 void Schedule::sortSchedule() {
     std::sort(aulas_.begin(), aulas_.end(), [](Lecture a, Lecture b) {
         int n1 = distance(weekday_names, find(weekday_names, weekday_names+weekday_names->size(), a.getWeekDay()));
@@ -18,6 +19,7 @@ void Schedule::sortSchedule() {
         return n1 < n2;});
 }
 
+//! Adiciona aulas ao vetor aulas_
 void Schedule::addLecture(const Lecture& aula) {
     aulas_.push_back(aula);
 }

@@ -1,0 +1,281 @@
+\hypertarget{functions_8cpp}{}\doxysection{C\+:/\+Users/dias4/\+Desktop/curso/2 ano/\+AED/\+AED-\/project/functions.cpp File Reference}
+\label{functions_8cpp}\index{C:/Users/dias4/Desktop/curso/2 ano/AED/AED-\/project/functions.cpp@{C:/Users/dias4/Desktop/curso/2 ano/AED/AED-\/project/functions.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include \char`\"{}functions.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{functions_8cpp_ace1500604f8cb298ce54f7ec5d642913}{lower}} (string s)
+\begin{DoxyCompactList}\small\item\em string para letra minuscula \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{functions_8cpp_a74be9d353c1279230b871800ea93042f}{upper}} (string s)
+\begin{DoxyCompactList}\small\item\em String para letra maiuscula. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8cpp_a3ff6c4e6f5cbde97745d755a986ed466}{set\+UCs}} ()
+\begin{DoxyCompactList}\small\item\em Cria o vetor de UCs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8cpp_af69fad1655ab319ef72f6c207059fdba}{get\+UCEmpty\+Rosters}} ()
+\begin{DoxyCompactList}\small\item\em Vai buscar as UCs da respetiva turma. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{functions_8cpp_aa38042daed4d4495ed872c3a0e5c3e94}{get\+Class\+Index}} (const string \&s)
+\begin{DoxyCompactList}\small\item\em vai buscar o indice da aula dentro do vetor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8cpp_ac157297cef32acd09cceac6c136b4412}{create\+Classes}} ()
+\begin{DoxyCompactList}\small\item\em Cria as aulas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8cpp_ae1256292fc91fee3e049ba4d72d4d9ce}{get\+Class\+Lectures}} ()
+\begin{DoxyCompactList}\small\item\em Vai buscar todas as aulas de todas as turmas ao ficheiro. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8cpp_a8b4c0a1f823f680937a1f87362019157}{get\+Students}} ()
+\begin{DoxyCompactList}\small\item\em Vai buscar os estudantes ao ficheiro. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8cpp_a9935fc19d82b837422e48c3436ae0ae2}{sort\+Class\+Schedules}} ()
+\begin{DoxyCompactList}\small\item\em Sort aos horarios de todas as turmas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8cpp_a258e7aa804112d6582008b817548f335}{fill\+UCRosters}} ()
+\begin{DoxyCompactList}\small\item\em Adiciona os estudantes da respetiva \mbox{\hyperlink{class_u_c}{UC}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8cpp_a4c2e7c213cd10fd369a298e73232eab2}{fill\+UCSchedules}} ()
+\begin{DoxyCompactList}\small\item\em Preenche o vetor de UCs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8cpp_a6b1262e432c0113e887d2cf483d0c94d}{create\+Student\+BST}} ()
+\begin{DoxyCompactList}\small\item\em cria a Student\+BST \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_b_s_t}{BST}} $\ast$ \mbox{\hyperlink{functions_8cpp_a2ed46d07ed428aa31a48c6d93c0b21f6}{get\+Student\+Location}} (int up\+Code)
+\begin{DoxyCompactList}\small\item\em devolve a localizacao do estudante, procura pelo seu codigo up dentro da arvore \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8cpp_a1eb780a6e16a231f557223ca81bd0e09}{create\+Empty\+Student\+Schedules}} ()
+\begin{DoxyCompactList}\small\item\em cria um vetor vazio para os horarios de cada estudante \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8cpp_a3f1f05f11e56a678930902f0867a450a}{get\+Student\+Lectures}} (\mbox{\hyperlink{class_b_s_t}{BST}} $\ast$node)
+\begin{DoxyCompactList}\small\item\em Le o ficheiro students\+\_\+classes e preenche a arvore. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8cpp_aee4e2a35ba865ea5f4839bbf0384617d}{get\+All\+Student\+Lectures}} (\mbox{\hyperlink{class_b_s_t}{BST}} $\ast$\mbox{\hyperlink{functions_8cpp_a979256bb2067386d1e6aa5eebe196c87}{root}})
+\begin{DoxyCompactList}\small\item\em Busca todas as aulas dos estudantes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8cpp_a8e782d26b3d3a1528e0a831d79edff62}{task4}} (\mbox{\hyperlink{class_b_s_t}{BST}} $\ast$\mbox{\hyperlink{functions_8cpp_a979256bb2067386d1e6aa5eebe196c87}{root}}, unsigned char n=0)
+\begin{DoxyCompactList}\small\item\em Devolve os Estudantes com mais de n UCs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{class_u_c}{UC}} $\ast$ $>$ \mbox{\hyperlink{functions_8cpp_a00fc38af448024968eceb4923bd47ab0}{UCs}} = \{\}
+\item 
+vector$<$ \mbox{\hyperlink{class_class}{Class}} $\ast$ $>$ \mbox{\hyperlink{functions_8cpp_af856dd1adc8ec8ae812f583296689652}{turmas\+\_\+leic}} = \{\}
+\item 
+vector$<$ \mbox{\hyperlink{class_schedule}{Schedule}} $\ast$ $>$ \mbox{\hyperlink{functions_8cpp_a95cb15a24ab6d98b92d01a5313715371}{horarios\+\_\+leic}} = \{\}
+\item 
+set$<$ pair$<$ int, string $>$ $>$ \mbox{\hyperlink{functions_8cpp_af6f4a0c48533dc8915364c91923d0e89}{student\+\_\+pairs}} = \{\}
+\item 
+vector$<$ \mbox{\hyperlink{class_schedule}{Schedule}} $\ast$ $>$ \mbox{\hyperlink{functions_8cpp_a5b62a226107b502b40d995c8f982a27b}{student\+\_\+schedules}} = \{\}
+\item 
+\mbox{\hyperlink{class_b_s_t}{BST}} \mbox{\hyperlink{functions_8cpp_a872db29de1c719f2b1989cd5fdbc7657}{b}}
+\item 
+\mbox{\hyperlink{class_b_s_t}{BST}} $\ast$ \mbox{\hyperlink{functions_8cpp_a979256bb2067386d1e6aa5eebe196c87}{root}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{functions_8cpp_ac157297cef32acd09cceac6c136b4412}\label{functions_8cpp_ac157297cef32acd09cceac6c136b4412}} 
+\index{functions.cpp@{functions.cpp}!createClasses@{createClasses}}
+\index{createClasses@{createClasses}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{createClasses()}{createClasses()}}
+{\footnotesize\ttfamily void create\+Classes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cria as aulas. 
+
+\mbox{\Hypertarget{functions_8cpp_a1eb780a6e16a231f557223ca81bd0e09}\label{functions_8cpp_a1eb780a6e16a231f557223ca81bd0e09}} 
+\index{functions.cpp@{functions.cpp}!createEmptyStudentSchedules@{createEmptyStudentSchedules}}
+\index{createEmptyStudentSchedules@{createEmptyStudentSchedules}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{createEmptyStudentSchedules()}{createEmptyStudentSchedules()}}
+{\footnotesize\ttfamily void create\+Empty\+Student\+Schedules (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+cria um vetor vazio para os horarios de cada estudante 
+
+\mbox{\Hypertarget{functions_8cpp_a6b1262e432c0113e887d2cf483d0c94d}\label{functions_8cpp_a6b1262e432c0113e887d2cf483d0c94d}} 
+\index{functions.cpp@{functions.cpp}!createStudentBST@{createStudentBST}}
+\index{createStudentBST@{createStudentBST}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{createStudentBST()}{createStudentBST()}}
+{\footnotesize\ttfamily void create\+Student\+BST (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+cria a Student\+BST 
+
+\mbox{\Hypertarget{functions_8cpp_a258e7aa804112d6582008b817548f335}\label{functions_8cpp_a258e7aa804112d6582008b817548f335}} 
+\index{functions.cpp@{functions.cpp}!fillUCRosters@{fillUCRosters}}
+\index{fillUCRosters@{fillUCRosters}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{fillUCRosters()}{fillUCRosters()}}
+{\footnotesize\ttfamily void fill\+UCRosters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Adiciona os estudantes da respetiva \mbox{\hyperlink{class_u_c}{UC}}. 
+
+\mbox{\Hypertarget{functions_8cpp_a4c2e7c213cd10fd369a298e73232eab2}\label{functions_8cpp_a4c2e7c213cd10fd369a298e73232eab2}} 
+\index{functions.cpp@{functions.cpp}!fillUCSchedules@{fillUCSchedules}}
+\index{fillUCSchedules@{fillUCSchedules}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{fillUCSchedules()}{fillUCSchedules()}}
+{\footnotesize\ttfamily void fill\+UCSchedules (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Preenche o vetor de UCs. 
+
+\mbox{\Hypertarget{functions_8cpp_aee4e2a35ba865ea5f4839bbf0384617d}\label{functions_8cpp_aee4e2a35ba865ea5f4839bbf0384617d}} 
+\index{functions.cpp@{functions.cpp}!getAllStudentLectures@{getAllStudentLectures}}
+\index{getAllStudentLectures@{getAllStudentLectures}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{getAllStudentLectures()}{getAllStudentLectures()}}
+{\footnotesize\ttfamily void get\+All\+Student\+Lectures (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_b_s_t}{BST}} $\ast$}]{root }\end{DoxyParamCaption})}
+
+
+
+Busca todas as aulas dos estudantes. 
+
+\mbox{\Hypertarget{functions_8cpp_aa38042daed4d4495ed872c3a0e5c3e94}\label{functions_8cpp_aa38042daed4d4495ed872c3a0e5c3e94}} 
+\index{functions.cpp@{functions.cpp}!getClassIndex@{getClassIndex}}
+\index{getClassIndex@{getClassIndex}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{getClassIndex()}{getClassIndex()}}
+{\footnotesize\ttfamily int get\+Class\+Index (\begin{DoxyParamCaption}\item[{const string \&}]{s }\end{DoxyParamCaption})}
+
+
+
+vai buscar o indice da aula dentro do vetor 
+
+\mbox{\Hypertarget{functions_8cpp_ae1256292fc91fee3e049ba4d72d4d9ce}\label{functions_8cpp_ae1256292fc91fee3e049ba4d72d4d9ce}} 
+\index{functions.cpp@{functions.cpp}!getClassLectures@{getClassLectures}}
+\index{getClassLectures@{getClassLectures}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{getClassLectures()}{getClassLectures()}}
+{\footnotesize\ttfamily void get\+Class\+Lectures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Vai buscar todas as aulas de todas as turmas ao ficheiro. 
+
+\mbox{\Hypertarget{functions_8cpp_a3f1f05f11e56a678930902f0867a450a}\label{functions_8cpp_a3f1f05f11e56a678930902f0867a450a}} 
+\index{functions.cpp@{functions.cpp}!getStudentLectures@{getStudentLectures}}
+\index{getStudentLectures@{getStudentLectures}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{getStudentLectures()}{getStudentLectures()}}
+{\footnotesize\ttfamily void get\+Student\+Lectures (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_b_s_t}{BST}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+Le o ficheiro students\+\_\+classes e preenche a arvore. 
+
+\mbox{\Hypertarget{functions_8cpp_a2ed46d07ed428aa31a48c6d93c0b21f6}\label{functions_8cpp_a2ed46d07ed428aa31a48c6d93c0b21f6}} 
+\index{functions.cpp@{functions.cpp}!getStudentLocation@{getStudentLocation}}
+\index{getStudentLocation@{getStudentLocation}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{getStudentLocation()}{getStudentLocation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_b_s_t}{BST}} $\ast$ get\+Student\+Location (\begin{DoxyParamCaption}\item[{int}]{up\+Code }\end{DoxyParamCaption})}
+
+
+
+devolve a localizacao do estudante, procura pelo seu codigo up dentro da arvore 
+
+\mbox{\Hypertarget{functions_8cpp_a8b4c0a1f823f680937a1f87362019157}\label{functions_8cpp_a8b4c0a1f823f680937a1f87362019157}} 
+\index{functions.cpp@{functions.cpp}!getStudents@{getStudents}}
+\index{getStudents@{getStudents}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{getStudents()}{getStudents()}}
+{\footnotesize\ttfamily void get\+Students (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Vai buscar os estudantes ao ficheiro. 
+
+\mbox{\Hypertarget{functions_8cpp_af69fad1655ab319ef72f6c207059fdba}\label{functions_8cpp_af69fad1655ab319ef72f6c207059fdba}} 
+\index{functions.cpp@{functions.cpp}!getUCEmptyRosters@{getUCEmptyRosters}}
+\index{getUCEmptyRosters@{getUCEmptyRosters}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{getUCEmptyRosters()}{getUCEmptyRosters()}}
+{\footnotesize\ttfamily void get\+UCEmpty\+Rosters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Vai buscar as UCs da respetiva turma. 
+
+\mbox{\Hypertarget{functions_8cpp_ace1500604f8cb298ce54f7ec5d642913}\label{functions_8cpp_ace1500604f8cb298ce54f7ec5d642913}} 
+\index{functions.cpp@{functions.cpp}!lower@{lower}}
+\index{lower@{lower}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{lower()}{lower()}}
+{\footnotesize\ttfamily string lower (\begin{DoxyParamCaption}\item[{string}]{s }\end{DoxyParamCaption})}
+
+
+
+string para letra minuscula 
+
+\mbox{\Hypertarget{functions_8cpp_a3ff6c4e6f5cbde97745d755a986ed466}\label{functions_8cpp_a3ff6c4e6f5cbde97745d755a986ed466}} 
+\index{functions.cpp@{functions.cpp}!setUCs@{setUCs}}
+\index{setUCs@{setUCs}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{setUCs()}{setUCs()}}
+{\footnotesize\ttfamily void set\+UCs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cria o vetor de UCs. 
+
+\mbox{\Hypertarget{functions_8cpp_a9935fc19d82b837422e48c3436ae0ae2}\label{functions_8cpp_a9935fc19d82b837422e48c3436ae0ae2}} 
+\index{functions.cpp@{functions.cpp}!sortClassSchedules@{sortClassSchedules}}
+\index{sortClassSchedules@{sortClassSchedules}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{sortClassSchedules()}{sortClassSchedules()}}
+{\footnotesize\ttfamily void sort\+Class\+Schedules (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sort aos horarios de todas as turmas. 
+
+\mbox{\Hypertarget{functions_8cpp_a8e782d26b3d3a1528e0a831d79edff62}\label{functions_8cpp_a8e782d26b3d3a1528e0a831d79edff62}} 
+\index{functions.cpp@{functions.cpp}!task4@{task4}}
+\index{task4@{task4}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{task4()}{task4()}}
+{\footnotesize\ttfamily void task4 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_b_s_t}{BST}} $\ast$}]{root,  }\item[{unsigned char}]{n = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Devolve os Estudantes com mais de n UCs. 
+
+\mbox{\Hypertarget{functions_8cpp_a74be9d353c1279230b871800ea93042f}\label{functions_8cpp_a74be9d353c1279230b871800ea93042f}} 
+\index{functions.cpp@{functions.cpp}!upper@{upper}}
+\index{upper@{upper}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{upper()}{upper()}}
+{\footnotesize\ttfamily string upper (\begin{DoxyParamCaption}\item[{string}]{s }\end{DoxyParamCaption})}
+
+
+
+String para letra maiuscula. 
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{functions_8cpp_a872db29de1c719f2b1989cd5fdbc7657}\label{functions_8cpp_a872db29de1c719f2b1989cd5fdbc7657}} 
+\index{functions.cpp@{functions.cpp}!b@{b}}
+\index{b@{b}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_b_s_t}{BST}} b}
+
+\mbox{\Hypertarget{functions_8cpp_a95cb15a24ab6d98b92d01a5313715371}\label{functions_8cpp_a95cb15a24ab6d98b92d01a5313715371}} 
+\index{functions.cpp@{functions.cpp}!horarios\_leic@{horarios\_leic}}
+\index{horarios\_leic@{horarios\_leic}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{horarios\_leic}{horarios\_leic}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_schedule}{Schedule}}$\ast$$>$ horarios\+\_\+leic = \{\}}
+
+\mbox{\Hypertarget{functions_8cpp_a979256bb2067386d1e6aa5eebe196c87}\label{functions_8cpp_a979256bb2067386d1e6aa5eebe196c87}} 
+\index{functions.cpp@{functions.cpp}!root@{root}}
+\index{root@{root}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_b_s_t}{BST}} $\ast$ root = nullptr}
+
+\mbox{\Hypertarget{functions_8cpp_af6f4a0c48533dc8915364c91923d0e89}\label{functions_8cpp_af6f4a0c48533dc8915364c91923d0e89}} 
+\index{functions.cpp@{functions.cpp}!student\_pairs@{student\_pairs}}
+\index{student\_pairs@{student\_pairs}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{student\_pairs}{student\_pairs}}
+{\footnotesize\ttfamily set$<$pair$<$int, string$>$ $>$ student\+\_\+pairs = \{\}}
+
+\mbox{\Hypertarget{functions_8cpp_a5b62a226107b502b40d995c8f982a27b}\label{functions_8cpp_a5b62a226107b502b40d995c8f982a27b}} 
+\index{functions.cpp@{functions.cpp}!student\_schedules@{student\_schedules}}
+\index{student\_schedules@{student\_schedules}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{student\_schedules}{student\_schedules}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_schedule}{Schedule}}$\ast$$>$ student\+\_\+schedules = \{\}}
+
+\mbox{\Hypertarget{functions_8cpp_af856dd1adc8ec8ae812f583296689652}\label{functions_8cpp_af856dd1adc8ec8ae812f583296689652}} 
+\index{functions.cpp@{functions.cpp}!turmas\_leic@{turmas\_leic}}
+\index{turmas\_leic@{turmas\_leic}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{turmas\_leic}{turmas\_leic}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_class}{Class}}$\ast$$>$ turmas\+\_\+leic = \{\}}
+
+\mbox{\Hypertarget{functions_8cpp_a00fc38af448024968eceb4923bd47ab0}\label{functions_8cpp_a00fc38af448024968eceb4923bd47ab0}} 
+\index{functions.cpp@{functions.cpp}!UCs@{UCs}}
+\index{UCs@{UCs}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{UCs}{UCs}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_u_c}{UC}}$\ast$$>$ UCs = \{\}}
+

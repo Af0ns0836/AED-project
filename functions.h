@@ -44,10 +44,6 @@ extern void fillUCSchedules();
 
 extern void createStudentBST();
 
-extern void printStudentBST();
-
-extern void searchPrintStudentLocation(int upCode);
-
 extern BST* getStudentLocation(int upCode);
 
 extern void createEmptyStudentSchedules();

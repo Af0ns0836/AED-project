@@ -1,0 +1,32 @@
+\hypertarget{_class_8h_source}{}\doxysection{C\+:/\+Users/dias4/\+Desktop/curso/2 ano/\+AED/\+AED-\/project/\+Class.h}
+\mbox{\hyperlink{_class_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef AED\_PROJECT\_CLASS\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define AED\_PROJECT\_CLASS\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_schedule_8h}{Schedule.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_student_8h}{Student.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{8 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_class}{Class}} \{}
+\DoxyCodeLine{11     \textcolor{keyword}{public}:}
+\DoxyCodeLine{12         \mbox{\hyperlink{class_class_a5b97d41527df822c6b1211931f79ca15}{Class}}();}
+\DoxyCodeLine{13         \textcolor{keyword}{explicit} \mbox{\hyperlink{class_class_a5b97d41527df822c6b1211931f79ca15}{Class}}(\textcolor{keywordtype}{string} class\_code);}
+\DoxyCodeLine{14         \textcolor{keyword}{explicit} \mbox{\hyperlink{class_class_a5b97d41527df822c6b1211931f79ca15}{Class}}(\textcolor{keywordtype}{string} class\_code, \mbox{\hyperlink{class_schedule}{Schedule}}* horario);}
+\DoxyCodeLine{15         \textcolor{keyword}{explicit} \mbox{\hyperlink{class_class_a5b97d41527df822c6b1211931f79ca15}{Class}}(\textcolor{keywordtype}{string} class\_code, \mbox{\hyperlink{class_schedule}{Schedule}}* horario, list<Student*> alunos);}
+\DoxyCodeLine{16         \textcolor{keywordtype}{string} \mbox{\hyperlink{class_class_aa68718414a5cad02b1afdba4ad450971}{getClassCode}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{17         \mbox{\hyperlink{class_schedule}{Schedule}}* \mbox{\hyperlink{class_class_a7076c091b288c95a57712e0ba43693c8}{getSchedule}}();}
+\DoxyCodeLine{18         list<Student*> \mbox{\hyperlink{class_class_a51bf4fea9b61c3d6947c687063b48fdb}{getStudentList}}();}
+\DoxyCodeLine{19         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_class_ab652a644782e66674abdc9b2f50a52a7}{addStudent}}(\mbox{\hyperlink{class_student}{Student}}* s);}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{keyword}{private}:}
+\DoxyCodeLine{22         \textcolor{keywordtype}{string} class\_code\_;}
+\DoxyCodeLine{23         \mbox{\hyperlink{class_schedule}{Schedule}}* horario\_;}
+\DoxyCodeLine{24         list<Student*> alunos\_;}
+\DoxyCodeLine{25 \};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

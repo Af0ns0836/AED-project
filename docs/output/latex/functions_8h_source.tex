@@ -1,0 +1,62 @@
+\hypertarget{functions_8h_source}{}\doxysection{C\+:/\+Users/dias4/\+Desktop/curso/2 ano/\+AED/\+AED-\/project/functions.h}
+\mbox{\hyperlink{functions_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef AED\_PROJECT\_FUNCTIONS\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define AED\_PROJECT\_FUNCTIONS\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_u_c_8h}{UC.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_b_s_t_8h}{BST.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_class_8h}{Class.h}}"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_schedule_8h}{Schedule.h}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_student_8h}{Student.h}}"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <utility>}}
+\DoxyCodeLine{11 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{extern} vector<UC*> \mbox{\hyperlink{functions_8h_a00fc38af448024968eceb4923bd47ab0}{UCs}};}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{extern} vector<Class*> \mbox{\hyperlink{functions_8h_af856dd1adc8ec8ae812f583296689652}{turmas\_leic}};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{extern} vector<Schedule*> \mbox{\hyperlink{functions_8h_a95cb15a24ab6d98b92d01a5313715371}{horarios\_leic}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{extern} set<pair<int, string>> \mbox{\hyperlink{functions_8h_af6f4a0c48533dc8915364c91923d0e89}{student\_pairs}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{extern} vector<Schedule*> \mbox{\hyperlink{functions_8h_a5b62a226107b502b40d995c8f982a27b}{student\_schedules}};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{extern} \mbox{\hyperlink{class_b_s_t}{BST}} \mbox{\hyperlink{functions_8h_a872db29de1c719f2b1989cd5fdbc7657}{b}}, *\mbox{\hyperlink{functions_8h_a979256bb2067386d1e6aa5eebe196c87}{root}};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{extern} \textcolor{keywordtype}{string} \mbox{\hyperlink{functions_8h_ace1500604f8cb298ce54f7ec5d642913}{lower}}(\textcolor{keywordtype}{string} s);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{extern} \textcolor{keywordtype}{string} \mbox{\hyperlink{functions_8h_a74be9d353c1279230b871800ea93042f}{upper}}(\textcolor{keywordtype}{string} s);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{functions_8h_a3ff6c4e6f5cbde97745d755a986ed466}{setUCs}}();}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{functions_8h_af69fad1655ab319ef72f6c207059fdba}{getUCEmptyRosters}}();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{functions_8h_ac157297cef32acd09cceac6c136b4412}{createClasses}}();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{functions_8h_ae1256292fc91fee3e049ba4d72d4d9ce}{getClassLectures}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{functions_8h_a8b4c0a1f823f680937a1f87362019157}{getStudents}}();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{functions_8h_a9935fc19d82b837422e48c3436ae0ae2}{sortClassSchedules}}();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{functions_8h_a258e7aa804112d6582008b817548f335}{fillUCRosters}}();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{functions_8h_a4c2e7c213cd10fd369a298e73232eab2}{fillUCSchedules}}();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{functions_8h_a6b1262e432c0113e887d2cf483d0c94d}{createStudentBST}}();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{extern} \mbox{\hyperlink{class_b_s_t}{BST}}* \mbox{\hyperlink{functions_8h_a2ed46d07ed428aa31a48c6d93c0b21f6}{getStudentLocation}}(\textcolor{keywordtype}{int} upCode);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{functions_8h_a1eb780a6e16a231f557223ca81bd0e09}{createEmptyStudentSchedules}}();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{functions_8h_a3f1f05f11e56a678930902f0867a450a}{getStudentLectures}}(\mbox{\hyperlink{class_b_s_t}{BST}}* node);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{functions_8h_aee4e2a35ba865ea5f4839bbf0384617d}{getAllStudentLectures}}(\mbox{\hyperlink{class_b_s_t}{BST}}* \mbox{\hyperlink{functions_8h_a979256bb2067386d1e6aa5eebe196c87}{root}});}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{functions_8h_a9576b9f16bc957be41acba8a3f455e9d}{task4}}(\mbox{\hyperlink{class_b_s_t}{BST}}* \mbox{\hyperlink{functions_8h_a979256bb2067386d1e6aa5eebe196c87}{root}}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} n);}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

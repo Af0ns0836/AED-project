@@ -4,25 +4,26 @@
 #include <iostream>
 using namespace std;
 
-// Default Constructor definition.
+//! Default Constructor definition.
 BST ::BST() = default;
 
-// Parameterized Constructor definition.
+//! Parameterized Constructor definition.
 BST ::BST(Student* student): student_(student), left_(nullptr), right_(nullptr) {}
 
+//! Return ao node student
 Student* BST::getStudent() {
     return student_;
 }
-
+//! Devolve o branch da direita
 BST* BST::getRightBranch() {
     return right_;
 }
-
+//! Devolve o branch da esquerda
 BST* BST::getLeftBranch() {
     return left_;
 }
 
-// Insert function definition.
+//! insere os students na arvore
 BST* BST ::insert(BST* root, Student *student) {
     if (!root) {
         // Insert the first node, if root is NULL.
@@ -49,28 +50,7 @@ BST* BST ::insert(BST* root, Student *student) {
     return root;
 }
 
-void BST::searchPrint(BST* root, int upCode) {
-    int depth = 0;
-    BST* temp;
-    temp = root;
-    // Run the loop untill temp points to a NULL pointer.
-    while(temp != nullptr) {
-        depth++;
-        if(temp->getStudent()->getStudentCode() == upCode) {
-            cout<<"Student found at depth: "<< depth << '\n';
-            cout << '(' << temp->getStudent()->getStudentCode() << " / " << temp->getStudent()->getStudentName() << ')' << endl;
-            return;
-        }
-            // Shift pointer to left child.
-        else if(temp->getStudent()->getStudentCode() > upCode)
-            temp = temp->getLeftBranch();
-            // Shift pointer to right child.
-        else
-            temp = temp->getRightBranch();
-    }
-    cout<<"Student not found.";
-}
-
+//! Procura um student na arvore pelo seu codigo up
 BST* BST::search(BST* root, int upCode) {
     int depth = 0;
     BST* temp;
@@ -93,6 +73,7 @@ BST* BST::search(BST* root, int upCode) {
 
 // Inorder traversal function.
 // This gives data in sorted order.
+//! Imprime quantas aulas o student tem por semana
 void BST::print(BST* root) {
     if (!root) {return;}
     print(root->left_);

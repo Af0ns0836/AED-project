@@ -13,7 +13,6 @@ class BST {
         BST* getRightBranch();
         BST* getLeftBranch();
         BST* insert(BST*, Student* student);
-        void searchPrint(BST*, int upCode);
         BST* search(BST*, int upCode);
         void print(BST*);
 

@@ -20,6 +20,7 @@ vector<Schedule*> student_schedules = {};
 
 BST b, *root = nullptr;
 
+//! string para letra minuscula
 string lower(string s) {
     for (char& c : s) {
         c = tolower(c);
@@ -27,13 +28,14 @@ string lower(string s) {
     return s;
 }
 
+//! String para letra maiuscula
 string upper(string s) {
     for (char& c : s) {
         c = toupper(c);
     }
     return s;
 }
-
+//! Cria o vetor de UCs
 void setUCs() { //first semester UC's only
     UCs.emplace_back(new UC("L.EIC001", "ALGA", 4.5));
     UCs.emplace_back(new UC("L.EIC002", "AM1", 6));
@@ -52,6 +54,7 @@ void setUCs() { //first semester UC's only
     UCs.emplace_back(new UC("L.EIC025", "RC", 6));
 }
 
+//!  Vai buscar as UCs da respetiva turma
 void getUCEmptyRosters() {
     ifstream file("../data-given/classes_per_uc.csv");
     if(!file) {
@@ -77,13 +80,14 @@ void getUCEmptyRosters() {
     file.close();
 }
 
+//! vai buscar o indice da aula dentro do vetor
 int getClassIndex(const string& s) { //linear search O(n) because it's <50 classes
     for (int i = 0; i < turmas_leic.size(); i++) {
         if (turmas_leic[i]->getClassCode() == s) {return i;}
     }
     return -1;
 }
-
+//! Cria as aulas
 void createClasses() {
     string class_code;
     for (int i = 1; i <= 3; i++) {
@@ -109,6 +113,7 @@ void createClasses() {
     turmas_leic.pop_back();
 }
 
+//! Vai buscar todas as aulas de todas as turmas ao ficheiro
 void getClassLectures() {
     string class_code;
     ifstream file("../data-given/classes.csv");
@@ -131,7 +136,7 @@ void getClassLectures() {
     }
     file.close();
 }
-
+//! Vai buscar os estudantes ao ficheiro
 void getStudents() {
     ifstream file("../data-given/students_classes.csv");
     if(!file) {
@@ -154,13 +159,13 @@ void getStudents() {
     }
     file.close();
 }
-
+//! Sort aos horarios de todas as turmas
 void sortClassSchedules() {
     for (auto c : turmas_leic) {
         c->getSchedule()->sortSchedule();
     }
 }
-
+//! Adiciona os estudantes da respetiva UC
 void fillUCRosters() {
     ifstream file("../data-given/students_classes.csv");
     if(!file) {cout << "Error opening file. " << endl;}
@@ -187,6 +192,7 @@ void fillUCRosters() {
     file.close();
 }
 
+//! Preenche o vetor de UCs
 void fillUCSchedules() {
     ifstream file("../data-given/classes.csv");
     if(!file) {cout << "Error opening file. " << endl;}
@@ -214,6 +220,7 @@ void fillUCSchedules() {
     file.close();
 }
 
+//! cria a StudentBST
 void createStudentBST() {
     root = b.insert(root, new Student());
     int i = 0;
@@ -223,25 +230,20 @@ void createStudentBST() {
     }
 }
 
-void printStudentBST() {
-    b.print(root);
-}
-
-void searchPrintStudentLocation(int upCode) {
-    b.searchPrint(root, upCode);
-}
-
+//! devolve a localizacao do estudante, procura pelo seu codigo up dentro da arvore
 BST* getStudentLocation(int upCode) {
     BST* found = b.search(root, upCode);
     return found;
 }
 
+//! cria um vetor vazio para os horarios de cada estudante
 void createEmptyStudentSchedules() {
     for (auto p : student_pairs) {
         student_schedules.emplace_back(new Schedule());
     }
 }
 
+//! Le o ficheiro students_classes e preenche a arvore
 void getStudentLectures(BST* node) {
     ifstream file("../data-given/students_classes.csv");
     if(!file) {cout << "Error opening file. " << endl;}
@@ -271,6 +273,7 @@ void getStudentLectures(BST* node) {
     file.close();
 }
 
+//! Busca todas as aulas dos estudantes
 void getAllStudentLectures(BST* root) {
     if (!root) {return;}
     getAllStudentLectures(root->getLeftBranch());
@@ -278,6 +281,7 @@ void getAllStudentLectures(BST* root) {
     getAllStudentLectures(root->getRightBranch());
 }
 
+//! Devolve os Estudantes com mais de n UCs
 void task4(BST* root, unsigned char n=0) {
     if (!root) {return;}
     set<string> s;

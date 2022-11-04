@@ -11,20 +11,12 @@ Lecture::Lecture(const Lecture &l): uc_code_(l.uc_code_), week_day_(l.week_day_)
 
 string Lecture::getUcCode() {return uc_code_;}
 
-void Lecture::setUcCode(string uc_code) {this->uc_code_ = std::move(uc_code);}
-
 string Lecture::getWeekDay() {return week_day_;}
-
-void Lecture::setWeekDay(string week_day) {this->week_day_ = std::move(week_day);}
 
 float Lecture::getStartTime() const {return start_time_;}
 
-void Lecture::setStartTime(float start_time) {this->start_time_ = start_time;}
-
 float Lecture::getDuration() const {return duration_;}
-
-void Lecture::setDuration(float duration) {this->duration_ = duration;}
 
 string Lecture::getType() {return type_;}
 
-void Lecture::setType(string type) {this->type_ = std::move(type);}
+

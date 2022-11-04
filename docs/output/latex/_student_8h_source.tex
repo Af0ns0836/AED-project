@@ -1,0 +1,30 @@
+\hypertarget{_student_8h_source}{}\doxysection{C\+:/\+Users/dias4/\+Desktop/curso/2 ano/\+AED/\+AED-\/project/\+Student.h}
+\mbox{\hyperlink{_student_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef AED\_PROJECT\_STUDENT\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define AED\_PROJECT\_STUDENT\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_schedule_8h}{Schedule.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_student}{Student}} \{}
+\DoxyCodeLine{9     \textcolor{keyword}{public}:}
+\DoxyCodeLine{10         \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}();}
+\DoxyCodeLine{11         \textcolor{keyword}{explicit} \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}(\textcolor{keywordtype}{int} upCode, \textcolor{keywordtype}{string} name);}
+\DoxyCodeLine{12         \textcolor{keyword}{explicit} \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}(\textcolor{keywordtype}{int} upCode, \textcolor{keywordtype}{string} name, \mbox{\hyperlink{class_schedule}{Schedule}}* horario);}
+\DoxyCodeLine{13         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_student_aed820901f4c0ccba519b5cf4e0007cfc}{getStudentCode}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{14         \textcolor{keywordtype}{string} \mbox{\hyperlink{class_student_af2fdac1ce7d10b271cf7103f675d9c17}{getStudentName}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{15         \mbox{\hyperlink{class_schedule}{Schedule}}* \mbox{\hyperlink{class_student_a9fd92d4a69d9237ecbc56b0886aa6097}{getStudentSchedule}}();}
+\DoxyCodeLine{16         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_student_ab63766ec1be00976185a08c063e3e303}{operator == }}(\textcolor{keyword}{const} \mbox{\hyperlink{class_student}{Student}}\& s)\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} upCode\_ == s.upCode\_;\}}
+\DoxyCodeLine{17         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_student_a832298c0a6bd16626173906b674f27d2}{operator != }}(\textcolor{keyword}{const} \mbox{\hyperlink{class_student}{Student}}\& s)\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} !\mbox{\hyperlink{class_student_ab63766ec1be00976185a08c063e3e303}{operator==}}(s);\}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keyword}{private}:}
+\DoxyCodeLine{20         \textcolor{keywordtype}{int} upCode\_;}
+\DoxyCodeLine{21         \textcolor{keywordtype}{string} name\_;}
+\DoxyCodeLine{22         \mbox{\hyperlink{class_schedule}{Schedule}}* horarioEstudante\_;}
+\DoxyCodeLine{23 \};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

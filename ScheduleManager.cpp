@@ -7,6 +7,7 @@
 
 ScheduleManager::ScheduleManager() = default;
 
+//! Menu do programa
 void ScheduleManager::menu() {
     char userchoice;
     bool done = false;
@@ -18,7 +19,7 @@ void ScheduleManager::menu() {
         cout << "1.Ocupacao de turmas/ano/UC\n";
         cout << "2.Horario de determinado estudante\n";
         cout << "3.Estudantes em determinada turma/UC/ano\n";
-        cout << "4.Estudantes com mais n de UCs\n"; // implica uso de BST(Binary Search Trees)
+        cout << "4.Estudantes com mais de n UCs\n"; // implica uso de BST(Binary Search Trees)
         cout << "5.Alteracao de horarios \n";
         cout << "6.Processar a fila de pedidos \n";
         cout << "Introduza o respetivo numero ou 'q' para terminar: ";
@@ -160,7 +161,7 @@ void ScheduleManager::menu() {
                     for (auto uc : UCs) {
                         string nome_uc = uc->getName();
                         if (nome_uc == upper(choice2)) {
-                            cout << "Alunos inscritos na turma " << upper(choice2) << " da UC (" << upper(nome_uc) << "):\n";
+                            cout << "Alunos inscritos em" << upper(nome_uc) << "\n";
                             for (auto c: uc->getUCClasses()) {
                                 for(auto s : c->getStudentList()) {
                                     cout << s->getStudentCode() << ' ' << s->getStudentName() << '\n';
@@ -265,6 +266,7 @@ void ScheduleManager::menu() {
     }
 }
 
+//! Le os ficheiros e preenche e inicializa as estruturas de dados
 void ScheduleManager::readFiles() {
     setUCs();
     getUCEmptyRosters();
@@ -279,10 +281,12 @@ void ScheduleManager::readFiles() {
     fillUCSchedules();
 }
 
+//! Adiciona os pedidos a queue
 void ScheduleManager::createRequest(const vector<string>& request) {
     q_.push(request);
 }
 
+//! Verifica se o pedido e valido
 bool ScheduleManager::checkValidRequest(vector<string> request) {
     int upcode = stoi(request[0]);
     string uc_name = request[1];
@@ -352,6 +356,7 @@ bool ScheduleManager::checkValidRequest(vector<string> request) {
     return false;
 }
 
+//! Trata do pedido
 void ScheduleManager::analyseRequests() {
     while (!q_.empty()) {
         if (checkValidRequest(q_.front())) {
